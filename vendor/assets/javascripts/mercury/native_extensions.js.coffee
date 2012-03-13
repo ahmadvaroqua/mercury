@@ -54,6 +54,6 @@ Number::toBytes = ->
 # IRWINSUMMER > QA > Debugging Mercury timeout issues
 # This was originally NOT commented out, trying something out
 # https://github.com/jejacks0n/mercury/issues/69#issuecomment-4059619
-#window.originalSetTimeout = window.setTimeout
+window.originalSetTimeout = window.setTimeout
 window.setTimeout = (arg1, arg2) ->
   if typeof(arg1) == 'number' then window.originalSetTimeout(arg2, arg1) else window.originalSetTimeout(arg1, arg2)
