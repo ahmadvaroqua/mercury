@@ -107,7 +107,8 @@ jQuery.extend Mercury.uploader,
               Mercury.config.uploading.handler(event.target.responseText)
             else
               jQuery.parseJSON(event.target.responseText)
-          src = response.url || response.image.url
+          # src = response.url || response.image.url
+          src = response.url || response.image.medium.url
           throw 'Malformed response from server.' unless src
           Mercury.trigger('action', {action: 'insertImage', value: {src: src}})
           @hide()
